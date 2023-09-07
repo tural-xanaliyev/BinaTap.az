@@ -1,0 +1,34 @@
+{
+    "data":[
+        {
+            "id":1,
+            "city":"Bakı",
+            "address":"Memar Əcəmi m",
+            "price":125000,
+            "rooms":2,
+            "area":52,
+            "floor":3,
+            "date":"9-7-2021 12:00:00"
+        },
+        {
+            "id":2,
+            "city":"Bakı",
+            "address":"Nərimanov Nərimanov m",
+            "price":180000,
+            "rooms":3,
+            "area":75,
+            "floor":5,
+            "date":"9-7-2023 12:00:00"
+        },
+        {
+            "id":3,
+            "city":"Bakı",
+            "address":"Azadlıq prospekti m",
+            "price":250000,
+            "rooms":4,
+            "area":100,
+            "floor":9,
+            "date":"9-7-2022 12:00:00"
+        }
+    ]
+}
