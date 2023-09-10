@@ -1,41 +1,40 @@
-import React, { useMemo } from 'react'
+import React, { useState } from 'react'
 import { useGetDatasQuery } from '../redux/dataSlice'
-import { Link } from 'react-router-dom'
+import NavBar from '../components/navbar/NavBar';
+import styles from './homePage.module.css'
+import DataExcerptBox from '../components/dataExcerptBox/DataExcerptBox';
+import { VList } from 'virtua';
+// import Img from '../../assets/png/bina1.png';
 
-let DataExcerpt = ({ data }) => {
-    return (
-        <article className="post-excerpt">
-            <h2>{data.price}</h2>
-            <p className="post-content">{data.address.substring(0, 100)}</p>
-            <p>{data.date}</p>
-            <Link to={`/datas/${data.id}`} className="button muted-button"> Posta Bax</Link>
-        </article>
-    )
-}
 
 
 const HomePage = () => {
-    const { data: datas = [], isLoading, isFetching, isSuccess, isError, error } = useGetDatasQuery()
-    const sortedDatas = useMemo(() => {
-        const sortedPosts = datas.slice();
-        sortedPosts.sort((a, b) => b.date.localeCompare(a.date));
-        return sortedPosts;
-    })
-
+    const [page, setPage] = useState(0)
+    const { data, isLoading, isFetching, isSuccess, isError, error } = useGetDatasQuery(page)
+    const [allDatas, setAllDatas] = useState([])
     let content;
 
     if (isLoading) {
         content = <div className="loader">Loading...</div>
     } else if (isSuccess) {
-        const renderedDatas = sortedDatas.map(data => <DataExcerpt key={data.id} data={data} />)
+        const renderedDatas = data?.map(data => <DataExcerptBox key={data.id} data={data} />)
         content = <div>{renderedDatas}</div>
     } else if (isError) {
         content = <div>{error.toString()}</div>
     }
+    // console.log(sortedDatas)
+
+
+
 
     return (
-        <div>HomePage
-            {content}
+        <div>
+            <NavBar />
+            {/* <VList style={{ height: 800 }}> */}
+                <div className={`${styles.HomePage_content}`}>
+                    {content}
+                </div>
+            {/* </VList> */}
         </div>
     )
 }

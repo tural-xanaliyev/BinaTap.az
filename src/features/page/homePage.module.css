@@ -1,0 +1,13 @@
+.HomePage_content{
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.HomePage_content>div{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 10px;
+}
+

@@ -3,15 +3,14 @@ import HomePage from './features/page/HomePage'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error404 from './features/errors/Error404';
 import DataDeteailsPage from './features/page/DataDeteailsPage';
+import DarkMode from './DarkMode';
+import NavBar from './features/components/navbar/NavBar';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
     errorElement: <Error404 />,
-    children: [
-      
-    ],
   },
   {
     path: "datas/:dataId",
@@ -22,7 +21,9 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
+   <>
     <RouterProvider router={router}/>
+   </>
   )
 }
 

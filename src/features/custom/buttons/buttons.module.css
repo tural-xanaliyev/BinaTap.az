@@ -1,0 +1,28 @@
+.button_hover {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid ;
+    border-radius: 8px;
+    color: var(--body_color);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+.button_hover:disabled {
+    pointer-events: none;
+}
+
+.button_hover:hover {
+    color: #fff;
+    background-color: var(--button_hover_bg);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.button_hover:active {
+    box-shadow: none;
+    transform: translateY(0);
+}

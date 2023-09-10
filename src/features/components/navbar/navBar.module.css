@@ -1,0 +1,24 @@
+.navBar_container,
+.navBar_container_menu>ul,
+.navBar_container_box{
+    display: flex;
+    align-items: center;
+}
+
+.navBar_container{
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 60px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    background-color: var(--navBar_background);
+}
+
+.navBar_container_menu>ul>li{
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.navBar_container_box button{
+    margin-right: 10px;
+}

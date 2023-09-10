@@ -6,14 +6,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { dataSlice } from "./features/redux/dataSlice";
-
-import Error404 from "./features/errors/Error404";
-import HomePage from "./features/page/HomePage";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 store.dispatch(dataSlice.endpoints.getDatas.initiate());
-
 
 root.render(
   <React.StrictMode>

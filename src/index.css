@@ -1,3 +1,38 @@
+:root {
+  --body_background: #e8e8e8;
+  --body_color: #3D4E5A;
+  --link_color: #253f52;
+  --link_hover_color: rgb(0, 0, 0);
+  --navBar_background: #FAFAFB;
+  --button_hover_bg: #1A1A1A;
+  --button_hover_border: #1A1A1A;
+  --post_excerpt_box_bg: #fff;
+  --post_excerpt_box_border: transparant;
+  --post_excerpt_box_shadow1: rgba(0, 0, 0, 0.1);
+  --post_excerpt_box_shadow2: rgba(0, 0, 0, 0.05);
+  --button_hover_shadow1: #a5a5a5;
+  --button_hover_shadow2: #d9d8d8;
+  --post_excerpt_h2_color:#1F2937;
+  --post_excerpt_span_color:#1F2937;
+}
+
+[data-theme="dark"] {
+  --body_background: #212121;
+  --body_color: #BBBBBB;
+  --link_color: #BBBBBB;
+  --link_hover_color: white;
+  --navBar_background: #2D2D2D;
+  --button_hover_bg: #1A1A1A;
+  --post_excerpt_box_bg: #212121;
+  --post_excerpt_box_border: #6a6969;
+  --post_excerpt_box_shadow1: #3a3a3a;
+  --post_excerpt_box_shadow2: #272727;
+  --button_hover_shadow1: #6a6969;
+  --button_hover_shadow2: #272727;
+  --post_excerpt_h2_color:#b2eccf;
+  --post_excerpt_span_color:#b3b3b3;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +40,156 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--body_background);
+  color: var(--body_color);
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link_color);
+}
+
+a:hover {
+  color: var(--link_hover_color);
+  transition: all 0.3s ease;
+}
+
+
+
+/* ! Them Swich */
+.btn-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.btn-container>img:first-child {
+  margin-right: 10px;
+}
+
+.btn-container>img:last-child {
+  margin-left: 10px;
+}
+
+.btn-container i {
+  display: inline-block;
+  position: relative;
+  top: -9px;
+}
+
+.btn-container label {
+  font-size: 13px;
+  color: #424242;
+  font-weight: 500;
+}
+
+.btn-color-mode-switch {
+  display: inline-block;
+  margin: 0px;
+  position: relative;
+}
+
+.btn-color-mode-switch>label.btn-color-mode-switch-inner {
+  margin: 0px;
+  width: 140px;
+  height: 30px;
+  background: #E0E0E0;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  /*box-shadow: 0px 0px 8px 0px rgba(17, 17, 17, 0.34) inset;*/
+  display: block;
+}
+
+.btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+  content: attr(data-on);
+  position: absolute;
+  font-size: 12px;
+  font-weight: 500;
+  top: 7px;
+  right: 20px;
+}
+
+.btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+  content: attr(data-off);
+  width: 70px;
+  height: 16px;
+  background: #fff;
+  border-radius: 26px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 6px -2px #111;
+  padding: 5px 0px;
+}
+
+.btn-color-mode-switch>.alert {
+  display: none;
+  background: #FF9800;
+  border: none;
+  color: #fff;
+}
+
+.btn-color-mode-switch input[type="checkbox"] {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  margin: 0px;
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner {
+  background: #151515;
+  color: #fff;
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
+  content: attr(data-on);
+  left: 68px;
+  background: #3c3c3c;
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
+  content: attr(data-off);
+  right: auto;
+  left: 20px;
+}
+
+.btn-color-mode-switch input[type="checkbox"]:checked~.alert {
+  display: block;
+}
+
+.dark-preview {
+  background: #0d0d0d;
+}
+
+.white-preview {
+  background: #fff;
 }

@@ -4,10 +4,10 @@ import { apiSlice } from "../api/apiSlice";
 export const dataSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getDatas: builder.query({
-      query: () => "/data",
+      query: (page) => `/data?page=${page}`,
       providesTags: (result = [], error, arg) => [
-        "Data",
         ...result.map(({ id }) => ({ type: "Data", id })),
+        { type: "Data", id: "LIST" },
       ],
     }),
     getData: builder.query({
