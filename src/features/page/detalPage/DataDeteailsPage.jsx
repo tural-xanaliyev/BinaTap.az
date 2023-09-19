@@ -1,9 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetDataQuery } from "../redux/dataSlice";
-import NavBar from "../components/navbar/NavBar";
+import { useGetDataQuery } from "../../redux/dataSlice";
+import NavBar from "../../components/navbar/NavBar";
 import styles from "./dataDeteailsPage.module.css";
-import SelectGrid from "../custom/selects/SelectGrid";
+import SelectGrid from "../../custom/selects/SelectGrid";
+import Img from "../../../assets/png/bina1.png";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdMeetingRoom } from "react-icons/md";
 const DataDeteailsPage = () => {
   const { dataId } = useParams();
   const { data, isFetching, isSuccess, error } = useGetDataQuery(dataId);
@@ -14,18 +17,26 @@ const DataDeteailsPage = () => {
     content = (
       <div className={`${styles.homePage_content}`}>
         <div className={`${styles.homePage_content_header}`}>
-          <img src={data.img} alt="Home" />
-          <div>
+          <div className={`${styles.img_box}`}>
+            <img src={Img} alt="Home" />
+          </div>
+          <div className={`${styles.homePage_content_right}`}>
             <h2>{data.description}</h2>
-            <p className={`${styles.homePage_address}`}>{data.address}</p>
-            <p className={`${styles.homePage_rooms}`}>{data.rooms}</p>
+            <p className={`${styles.homePage_address}`}>
+              <FaLocationDot />
+              {data.address}</p>
+            <p className={`${styles.homePage_rooms}`}>
+              <MdMeetingRoom/>
+              {data.rooms} 
+              {" "}
+               Otaqlı
+              </p>
             <p className={`${styles.homePage_price}`}>
               Qiyməti: <span>{data.price}</span> AZN
             </p>
             <div className={`${styles.homePage_advertiser}`}>
               <div className={`${styles.advertiser_detail}`}>
-                <p>Elan Sahibi</p>
-                <span>mülkiyyətçi</span>
+                <p>Elan Sahibi: Mülkiyyətçi</p>
               </div>
               <div className={`${styles.advertiser_profile}`}>
                 <button>Əlaqəyə Keç</button>
@@ -52,7 +63,7 @@ const DataDeteailsPage = () => {
             </p>
           </div>
           <div className={`${styles.traits_property}`}>
-            
+
 
             <SelectGrid content={"Mülkiyətin Xususiyyətləri"} datas={data} />
 

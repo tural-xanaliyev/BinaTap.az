@@ -1,8 +1,8 @@
 import React from 'react'
-import HomePage from './features/page/HomePage'
+import HomePage from './features/page/home/HomePage'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error404 from './features/errors/Error404';
-import DataDeteailsPage from './features/page/DataDeteailsPage';
+import DataDeteailsPage from './features/page/detalPage/DataDeteailsPage';
 import DarkMode from './DarkMode';
 import NavBar from './features/components/navbar/NavBar';
 

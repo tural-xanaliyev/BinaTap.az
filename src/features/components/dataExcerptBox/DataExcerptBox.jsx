@@ -1,21 +1,50 @@
 import React, { useState } from 'react'
 import styles from './dataExcerptBox.module.css'
 import { HiHeart, HiOutlineHeart } from "react-icons/hi";
+import Img from '../../../assets/png/bina1.png';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import { ImArrowRight, ImArrowLeft } from "react-icons/im";
+
 
 const DataExcerptBox = ({ data }) => {
     const [isFavorite, setIsFavorite] = useState(false)
+    const handleDragStart = (e) => e.preventDefault();
+    const imgs = [
+        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
+    ]
+    const renderNextButton = () => {
+        return <ImArrowRight className={styles.CursorRight} />
+    };
+
+    const renderPrevButton = () => {
+        return <ImArrowLeft className={styles.CursorLeft} />
+    };
     return (
         <article className={`${styles.post_excerpt}`}
             onClick={(e) => {
                 e.preventDefault()
                 console.log(e.target)
-                if(e.target.tagName.toLowerCase()!== 'svg' && e.target.tagName.toLowerCase()!== 'path'){
+                if (e.target.tagName.toLowerCase() !== 'svg' && e.target.tagName.toLowerCase() !== 'path') {
                     window.location.href = `/datas/${data.id}`
                 }
             }
             }
         >
-            <img src={data.img} alt="Bina" />
+            <div className={`${styles.post_img_box}`}>
+                <AliceCarousel
+                    items={imgs}
+                    disableDotsControls
+                    renderNextButton={renderNextButton}
+                    renderPrevButton={renderPrevButton}
+                    autoWidth
+                    infinite
+                />
+            </div>
             <div className={`${styles.post_excerpt_box}`}>
                 <div className={`${styles.header_content}`}>
                     <h2>{data.price} AZN</h2>

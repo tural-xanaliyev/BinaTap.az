@@ -1,14 +1,16 @@
 import React from 'react'
 import styles from './navBar.module.css'
 import DarkMode from '../../../DarkMode'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ButtonHover from '../../custom/buttons/ButtonHover'
 
 const NavBar = () => {
   return (
     <div className={`${styles.navBar_container}`}>
       <div className={`${styles.navBar_container_logo}`}>
-        <h1>Logo</h1>
+        <Link to="/">
+          <h1>Logo</h1>
+        </Link>
       </div>
       <div className={`${styles.navBar_container_menu}`}>
         <ul>

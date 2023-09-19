@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
-import { useGetDatasQuery } from '../redux/dataSlice'
-import NavBar from '../components/navbar/NavBar';
+import { useGetDatasQuery } from '../../redux/dataSlice'
+import NavBar from '../../components/navbar/NavBar';
 import styles from './homePage.module.css'
-import DataExcerptBox from '../components/dataExcerptBox/DataExcerptBox';
-import { VList } from 'virtua';
-// import Img from '../../assets/png/bina1.png';
+import DataExcerptBox from '../../components/dataExcerptBox/DataExcerptBox';
 
 
 
 const HomePage = () => {
     const [page, setPage] = useState(0)
     const { data, isLoading, isFetching, isSuccess, isError, error } = useGetDatasQuery(page)
-    const [allDatas, setAllDatas] = useState([])
     let content;
 
     if (isLoading) {
@@ -22,7 +19,7 @@ const HomePage = () => {
     } else if (isError) {
         content = <div>{error.toString()}</div>
     }
-    // console.log(sortedDatas)
+
 
 
 

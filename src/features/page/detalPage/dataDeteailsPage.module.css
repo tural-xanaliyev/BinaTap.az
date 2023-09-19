@@ -1,0 +1,108 @@
+.homePage_content {
+    padding: 20px 40px;
+    padding-top: 50px;
+}
+
+.homePage_content_header {
+    display: flex;
+    align-items: center;
+}
+
+.img_box {
+    width: 40%;
+    padding: 10px;
+    border-radius: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0.693);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+body[data-theme="dark"] .img_box {
+    border: 1px solid rgb(42, 41, 41);
+    background-color: rgb(41, 41, 41);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.homePage_content_right {
+    margin-left: 100px;
+}
+
+.homePage_content_header>.img_box>img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.homePage_content_header h2,
+.additional_box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.homePage_content_header>div>p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.homePage_content_header>div>p>svg {
+    margin-right: 10px;
+}
+
+.homePage_price,
+.advertiser_detail>p {
+    font-weight: 500;
+    font-size: 18px !important;
+}
+
+.homePage_price>span {
+    margin-right: 5px;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.advertiser_profile>button {
+    margin-top: 20px;
+    padding: 13px 25px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #3db460;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* add box shadow */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+}
+
+.advertiser_profile>button:hover {
+    background-color: #2f9a4f;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.additional_box {
+    display: flex;
+    margin-top: 30px;
+}
+
+.additional_box>div {
+    width: 50%;
+}
+
+.traits_description>p {
+    width: 80%;
+    color: #757575;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 27px */
+    letter-spacing: -0.198px;
+}
