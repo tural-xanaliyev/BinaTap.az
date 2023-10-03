@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import styles from './dataExcerptBox.module.css'
 import { HiHeart, HiOutlineHeart } from "react-icons/hi";
-import Img from '../../../assets/png/bina1.png';
+import Img1 from '../../../assets/png/bina1.png';
+import Img2 from '../../../assets/png/bina2.png';
+import Img3 from '../../../assets/png/bina3.png';
+import Img4 from '../../../assets/png/bina4.png';
+import Img5 from '../../../assets/png/bina5.png';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { ImArrowRight, ImArrowLeft } from "react-icons/im";
@@ -11,11 +15,11 @@ const DataExcerptBox = ({ data }) => {
     const [isFavorite, setIsFavorite] = useState(false)
     const handleDragStart = (e) => e.preventDefault();
     const imgs = [
-        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img1} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img2} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img3} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img4} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img5} alt="Bina" onDragStart={handleDragStart} />,
     ]
     const renderNextButton = () => {
         return <ImArrowRight className={styles.CursorRight} />
@@ -25,7 +29,7 @@ const DataExcerptBox = ({ data }) => {
         return <ImArrowLeft className={styles.CursorLeft} />
     };
     return (
-        <article className={`${styles.post_excerpt}`}
+        <article className={`${styles.post_excerpt} single_data`}
             onClick={(e) => {
                 e.preventDefault()
                 console.log(e.target)
@@ -37,12 +41,12 @@ const DataExcerptBox = ({ data }) => {
         >
             <div className={`${styles.post_img_box}`}>
                 <AliceCarousel
+                    mouseTracking
                     items={imgs}
                     disableDotsControls
+                    infinite
                     renderNextButton={renderNextButton}
                     renderPrevButton={renderPrevButton}
-                    autoWidth
-                    infinite
                 />
             </div>
             <div className={`${styles.post_excerpt_box}`}>

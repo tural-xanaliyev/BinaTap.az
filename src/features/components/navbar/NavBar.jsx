@@ -22,7 +22,9 @@ const NavBar = () => {
       </div>
       <div className={`${styles.navBar_container_box}`}>
         <div className={`${styles.navBar_container_box_add}`}>
-          <ButtonHover text={'Elan yerləşdir +'} />
+          <Link to="/add-prodact">
+            <ButtonHover text={'Elan yerləşdir +'} />
+          </Link>
         </div>
         <div className={`${styles.navBar_container_box_login}`}>
           <ButtonHover text={'Daxil ol'} />

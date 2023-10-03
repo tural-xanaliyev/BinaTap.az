@@ -1,0 +1,85 @@
+.Disclosure_button {
+    width: 100%;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid #D9D9D9;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.Disclosure_button:hover {
+    background-color: #f5f5f5;
+}
+
+
+.Disclosure_panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.panel_box {
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #D9D9D9;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.panel_box h3 {
+    color: #B3B3B3;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.132px;
+    margin-bottom: 0;
+}
+
+.panel_box h4 {
+    color: #757575;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.132px;
+}
+
+body[data-theme="dark"] .Disclosure_button {
+    border: 3px solid #2B2B2B;
+    background-color: #2B2B2B;
+    color: #fff;
+}
+
+body[data-theme="dark"] .Disclosure_button:hover {
+    background-color: #3B3B3B;
+}
+
+body[data-theme="dark"] .panel_box {
+    border: 3px solid #2B2B2B;
+    background-color: #2B2B2B;
+    color: #fff;
+}
+
+body[data-theme="dark"] .panel_box h3 {
+    color: #757575;
+}
+
+body[data-theme="dark"] .panel_box h4 {
+    color: #B3B3B3;
+}

@@ -1,0 +1,176 @@
+.AddProdact_container{
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #F8F6F4;
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+}
+
+.AddProdact_container>h1{
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    background-color: #212121;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+body[data-theme="dark"] .AddProdact_container>h1{
+    background-color: #731130 ;
+}
+
+body[data-theme="dark"] .AddProdact_container{
+    background-color: #393e468c;
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+}
+
+.AddProdact_content{
+    display: flex;
+    padding: 10px 20px;
+}
+.AddProdact_content>div{
+    width: 50%;
+}
+.AddProdact_inputs>div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.AddProdact_inputs>div label{
+    display: flex;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    min-width: 200px;
+}
+.person_box>div{
+    display: flex;
+}
+.person_box >div>div{
+    width: 245px;
+    text-align: center;
+}
+.person_box>div:first-child>div>button{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.person_box>div:last-child>div>button{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.area_box>input{
+    max-width: 200px;
+}
+.addition_infomation>div{
+    width: 100%;
+}
+.addition_infomation textarea{
+    width: 100%;
+    min-height: 300px;
+}
+.addition_infomation>div>span{
+    display: block;
+    text-align: end;
+    font-size: 15px;
+    font-weight: 600;
+}.addImg_box>label{
+    align-self: flex-start;
+}
+
+.addImg_box>div>input[type="file"]{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.addImg_box>div>ul>li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.relevantPerson_box>label{
+    align-self: flex-start;
+}
+
+.relevantPerson_box>div>ul>li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.relevantPerson_box>div{
+    width: 100%;
+}
+
+.radioBox{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.radioBox label{
+    margin-bottom: 0 !important;
+    margin-left: 10px;
+}
+
+
+.AddProdact_regulations{
+    padding-left: 20px;
+
+}
+
+.AddProdact_regulations>ul{
+    list-style: circle !important;
+}
+
+.AddProdact_regulations>ul>li{
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+body[data-theme="dark"] .AddProdact_inputs>div label{
+    color: #fff;
+}
+
+.imgListBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.imgListBox>div{
+    width: 32%;
+    margin-bottom: 10px;
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.imgListBox img{
+    width: 150px;
+    height: 150px;
+    border-radius:5px ;
+}

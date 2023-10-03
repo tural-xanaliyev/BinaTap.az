@@ -40,7 +40,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--body_background);
+  background-color: var(--body_background) !important;
   color: var(--body_color);
 
 }
@@ -192,4 +192,34 @@ a:hover {
 
 .white-preview {
   background: #fff;
+}
+
+.homePage_second_box img{
+  height: 110px;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  border-radius: 5px;  
+  border: 1px solid transparent;
+}
+
+.homePage_second_box .thumb{
+  width: max-content;
+  padding:10px 15px;
+  border-radius: 10px;  
+  background-color: rgba(255, 255, 255, 0.693);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+body[data-theme="dark"] .homePage_second_box .thumb{
+  border: 1px solid rgb(42, 41, 41);
+  background-color: rgb(41, 41, 41);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.single_data .alice-carousel__stage-item{
+  width: 100% !important;
 }

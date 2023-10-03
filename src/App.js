@@ -3,8 +3,7 @@ import HomePage from './features/page/home/HomePage'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error404 from './features/errors/Error404';
 import DataDeteailsPage from './features/page/detalPage/DataDeteailsPage';
-import DarkMode from './DarkMode';
-import NavBar from './features/components/navbar/NavBar';
+import AddProdact from './features/page/addProdact/AddProdact';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +15,10 @@ const router = createBrowserRouter([
     path: "datas/:dataId",
     element:<DataDeteailsPage/>
   },
+  {
+    path:"add-prodact",
+    element:<AddProdact/>
+  }
 ]);
 
 

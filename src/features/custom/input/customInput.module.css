@@ -1,0 +1,67 @@
+/* Input container */
+.input_container {
+    position: relative;
+}
+
+/* Input field */
+.input_field {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    padding-left: 0;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+}
+
+/* Input label */
+.input_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: rgba(204, 204, 204, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input_highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input_field:focus+.input_label {
+    top: -20px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.input_field:focus+.input_label+.input_highlight {
+    width: 100%;
+}
+
+body[data-theme="dark"] .input_field {
+    color: #fff;
+}
+
+body[data-theme="dark"] .input_container input::placeholder {
+    color: #ffffffcd;
+}
+
+body[data-theme="dark"] .input_field:focus+.input_label {
+    color: #fff;
+}
+
+body[data-theme="dark"] .input_highlight {
+    background-color: #fff;
+}
+
