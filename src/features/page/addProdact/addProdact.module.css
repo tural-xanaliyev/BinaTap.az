@@ -174,3 +174,28 @@ body[data-theme="dark"] .AddProdact_inputs>div label{
     height: 150px;
     border-radius:5px ;
 }
+
+.form_submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form_submit>button{
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: #212121;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+body[data-theme="dark"] .form_submit>button{
+    background-color: #731130;
+}
+

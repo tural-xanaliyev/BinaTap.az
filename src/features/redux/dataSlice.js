@@ -13,6 +13,11 @@ export const dataSlice = apiSlice.injectEndpoints({
       query: (id) => `/data/${id}`,
       providesTags: (result = [], error, arg) => [{ type: "Data", id: arg.id }],
     }),
+    getDataFilter: builder.query({
+      query: (filter) => `/data?filter=${filter}`,
+      providesTags: (result = [], error, arg) => [{ type: "Data", id: arg.id }],
+    })
+    ,
     addNewData: builder.mutation({
       query: (initialData) => ({
         url: "/data",
@@ -44,4 +49,6 @@ export const {
   useGetDataQuery,
   useAddNewDataMutation,
   useUpdateDataMutation,
+  useDeleteDataMutation,
+  useGetDataFilterQuery
 } = dataSlice;

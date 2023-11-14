@@ -40,6 +40,10 @@
     border-radius: 5px;
     z-index: 999;
 }
+.selectBox_options>ul{
+    max-height: 600px;
+    overflow-y: auto;
+}
 
 .selectBox_options li{
     padding: 10px;
@@ -52,4 +56,5 @@
 
 body[data-theme="dark"] .selectBox_options li{
     color:black  ;
+
 }

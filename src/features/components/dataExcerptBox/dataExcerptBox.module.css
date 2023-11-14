@@ -107,8 +107,9 @@
 .post_excerpt:hover .CursorLeft {
     font-size: 40px;
     padding: 10px;
+    top: 50%;
 }
-.post_img_box>div>div {
+.post_img_box {
     position: relative;
 }
 

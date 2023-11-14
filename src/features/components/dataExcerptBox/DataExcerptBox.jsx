@@ -13,14 +13,16 @@ import { ImArrowRight, ImArrowLeft } from "react-icons/im";
 
 const DataExcerptBox = ({ data }) => {
     const [isFavorite, setIsFavorite] = useState(false)
-    const handleDragStart = (e) => e.preventDefault();
+
     const imgs = [
-        <img src={Img1} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img2} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img3} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img4} alt="Bina" onDragStart={handleDragStart} />,
-        <img src={Img5} alt="Bina" onDragStart={handleDragStart} />,
+        <img src={Img1} alt="Bina" data-value="1" width="500px"/>,
+        <img src={Img2} alt="Bina" data-value="2" />,
+        <img src={Img3} alt="Bina" data-value="3" />,
+        <img src={Img4} alt="Bina" data-value="4" />,
+        <img src={Img5} alt="Bina" data-value="5" />,
     ]
+
+    const carousel = React.createRef();
     const renderNextButton = () => {
         return <ImArrowRight className={styles.CursorRight} />
     };
@@ -30,24 +32,31 @@ const DataExcerptBox = ({ data }) => {
     };
     return (
         <article className={`${styles.post_excerpt} single_data`}
-            onClick={(e) => {
-                e.preventDefault()
-                console.log(e.target)
-                if (e.target.tagName.toLowerCase() !== 'svg' && e.target.tagName.toLowerCase() !== 'path') {
-                    window.location.href = `/datas/${data.id}`
-                }
+        onClick={(e) => {
+            e.preventDefault()
+            console.log(e.target)
+            if (e.target.tagName.toLowerCase() !== 'svg' && e.target.tagName.toLowerCase() !== 'path') {
+                window.location.href = `/datas/${data.id}`
             }
-            }
+        }
+        }
         >
             <div className={`${styles.post_img_box}`}>
                 <AliceCarousel
+                    key="carousel"
                     mouseTracking
                     items={imgs}
+                    disableButtonsControls
                     disableDotsControls
+                    ref={carousel}
                     infinite
-                    renderNextButton={renderNextButton}
-                    renderPrevButton={renderPrevButton}
                 />
+                <button onClick={(e) => carousel?.current?.slideNext(e)}>
+                    <ImArrowRight className={styles.CursorRight} />
+                </button>
+                <button onClick={(e) => carousel?.current?.slidePrev(e)}>
+                    <ImArrowLeft className={styles.CursorLeft} />
+                </button>
             </div>
             <div className={`${styles.post_excerpt_box}`}>
                 <div className={`${styles.header_content}`}>
